@@ -8,17 +8,17 @@ output_dir = os.path.join(root_dir, "output")
 script_desc = "Transforms models in the given input project"
 
 
-def transform_clean():
+def build_pamphlet():
 
     parser = argparse.ArgumentParser(description=script_desc)
     args = parser.parse_args()
 
     print("\n----------------------------------------------------------------\n")
 
-    print(f"> Test content\n")
+    print(f"> Test content")
 
     print("\n----------------------------------------------------------------\n")
 
 
-if __name__ == "__transform_clean__":
-    transform_clean()
+if __name__ == "__build_pamphlet__":
+    build_pamphlet()

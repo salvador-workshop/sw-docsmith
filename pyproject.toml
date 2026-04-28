@@ -1,6 +1,6 @@
 [project]
 name = "sw-docsmith"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = [
     {name = "RJ Salvador",email = "salvador.workshop@gmail.com"}
@@ -11,11 +11,14 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "docsmith", from = "src"}]
+packages = [{include = "sw_docsmith", from = "src"}]
 package-mode = false
 
 [tool.poetry.scripts]
-transform-clean = "src.docsmith.transform_clean:transform_clean"
+build-resume = "src.sw_docsmith.build_resume:build_resume"
+build-pamphlet = "src.sw_docsmith.build_pamphlet:build_pamphlet"
+build-flashcards = "src.sw_docsmith.build_flashcards:build_flashcards"
+build-business-card = "src.sw_docsmith.build_business_card:build_business_card"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
