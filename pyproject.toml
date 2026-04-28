@@ -1,0 +1,23 @@
+[project]
+name = "docsmith"
+version = "0.2.1"
+description = ""
+authors = [
+    {name = "RJ Salvador",email = "salvador.workshop@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "docsmitth", from = "src"}]
+package-mode = false
+
+[tool.poetry.scripts]
+transform-clean = "src.docsmitth.transform_clean:transform_clean"
+transform-simplify = "src.docsmitth.transform_simplify:transform_simplify"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
