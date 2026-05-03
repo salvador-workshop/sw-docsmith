@@ -1,0 +1,34 @@
+{
+    "opModes": [
+        {
+            "id": 1,
+            "name": "TRANSPARENTIZE",
+            "desc": "Makes image transparent/translucent based on lightness",
+            "nameConfirmation": "Transparentize Images"
+        },
+        {
+            "id": 2,
+            "name": "TRANSPARENTIZE (desat.)",
+            "desc": "Desaturates images, adds transparency based on lightness",
+            "nameConfirmation": "Transparentize and Desaturate Images"
+        },
+        {
+            "id": 3,
+            "name": "RE-PRINT ENGRAVING",
+            "desc": "Desaturates images, reduces values to (mostly) black and white",
+            "nameConfirmation": "Re-print Engravings"
+        },
+        {
+            "id": 4,
+            "name": "CONVERT BLACK & WHITE TO TWO COLOURS",
+            "desc": "Colours a black and white image based on configuration",
+            "nameConfirmation": "Convert B&W Images to Two Colours"
+        },
+        {
+            "id": 5,
+            "name": "COPY E-BOOK IMAGES",
+            "desc": "Pulls all images from an input e-book (.epub)",
+            "nameConfirmation": "Copy E-Book Images"
+        }
+    ]
+}
