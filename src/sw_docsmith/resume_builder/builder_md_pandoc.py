@@ -12,14 +12,14 @@ from .utils_md import (
 
 
 def build_resume_full_md_pandoc(resume_info, build_opts):
-    out_file_full_md = open("build/resume-full-pandoc.md", "w", encoding="utf-8")
+    out_file_full_md = open("output/resume/resume-full-pandoc.md", "w", encoding="utf-8")
 
     # -----
     # Intro
 
     out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
-    out_file_full_md.write("![](src/resume_builder/icons/icon-merlion.svg \"Decorative icon (left)\")  \n")
-    out_file_full_md.write("![](src/resume_builder/icons/sw-qr.svg \"QR code (right)\")\n\n")
+    out_file_full_md.write("![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg \"Decorative icon (left)\")  \n")
+    out_file_full_md.write("![](src/sw_docsmith/resume_builder/icons/sw-qr.svg \"QR code (right)\")\n\n")
     out_file_full_md.write(f"#### {resume_info["subtitle"]} {{#subtitle}}\n\n")
 
     # ------------
@@ -35,23 +35,23 @@ def build_resume_full_md_pandoc(resume_info, build_opts):
             contact_cells_row_idx += 1
         link = contact["info"]
         copy = contact["info"].replace("https://", "")
-        contact_icon_src = "src/resume_builder/icons/generic.svg"
+        contact_icon_src = "src/sw_docsmith/resume_builder/icons/generic.svg"
 
         if contact["type"] == "website":
-            contact_icon_src = "src/resume_builder/icons/user-circle.svg"
+            contact_icon_src = "src/sw_docsmith/resume_builder/icons/user-circle.svg"
         elif contact["type"] == "email":
             link = f"mailto:{contact["info"] }"
-            contact_icon_src = "src/resume_builder/icons/email.svg"
+            contact_icon_src = "src/sw_docsmith/resume_builder/icons/email.svg"
         elif contact["type"] == "phone":
             link = f"tel:{format_phone_num(contact["info"], "html")}"
             copy = format_phone_num(contact["info"])
-            contact_icon_src = "src/resume_builder/icons/phone.svg"
+            contact_icon_src = "src/sw_docsmith/resume_builder/icons/phone.svg"
         elif contact["type"] == "github":
             copy = contact["info"].replace("https://github.com/", "")
-            contact_icon_src = "src/resume_builder/icons/github.svg"
+            contact_icon_src = "src/sw_docsmith/resume_builder/icons/github.svg"
         elif contact["type"] == "linkedin":
             copy = contact["info"].replace("https://linkedin.com/in/", "")
-            contact_icon_src = "src/resume_builder/icons/linkedin.svg"
+            contact_icon_src = "src/sw_docsmith/resume_builder/icons/linkedin.svg"
 
         contact_alt = f"Icon ({contact["type"]})"
         contact_icon = f'![{contact_alt}]({contact_icon_src} "{contact_alt}")'

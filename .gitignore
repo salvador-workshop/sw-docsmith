@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+output/resume/
 develop-eggs/
 dist/
 downloads/
@@ -70,7 +70,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/_output/resume/
 
 # PyBuilder
 .pybuilder/
@@ -116,7 +116,7 @@ ipython_config.py
 # pdm.lock
 # pdm.toml
 .pdm-python
-.pdm-build/
+.pdm-output/resume/
 
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.

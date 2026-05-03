@@ -2,7 +2,7 @@ from .utils import format_phone_num, format_date, sort_exp
 
 
 def build_resume_full_txt(resume_info, build_opts):
-    out_file_full_txt = open("build/resume-full.txt", "w", encoding="utf-8")
+    out_file_full_txt = open("output/resume/resume-full.txt", "w", encoding="utf-8")
 
     # -----
     # Intro

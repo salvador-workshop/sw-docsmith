@@ -1,4 +1,4 @@
-from resume_builder.utils import (
+from .utils import (
     get_dashline,
     get_dashline_for_str,
     get_padline,

@@ -29,19 +29,19 @@ def build_resume_full(complete_resume_info):
 
 
 def build_resume_short(complete_resume_info):
-    out_file_short = open("build/resume-short.txt", "w", encoding="utf-8")
+    out_file_short = open("output/resume/resume-short.txt", "w", encoding="utf-8")
 
     return 0
 
 
 def build_resume_tiny(complete_resume_info):
-    out_file_tiny = open("build/resume-tiny.txt", "w", encoding="utf-8")
+    out_file_tiny = open("output/resume/resume-tiny.txt", "w", encoding="utf-8")
 
     return 0
 
 
 def build_cover_letter(complete_resume_info):
-    out_file_cover = open("build/cover.txt", "w", encoding="utf-8")
+    out_file_cover = open("output/resume/cover.txt", "w", encoding="utf-8")
 
     # -----
     # Intro

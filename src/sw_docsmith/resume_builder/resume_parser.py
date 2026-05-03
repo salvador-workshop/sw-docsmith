@@ -6,10 +6,10 @@ def parse_resume():
     # LOADING FILES
     # -------------
 
-    resume_data = open("data/resume.json", "r", encoding="utf-8")
-    contacts_data = open("data/contacts.json", "r", encoding="utf-8")
-    experience_data = open("data/experience.json", "r", encoding="utf-8")
-    cover_data = open("data/cover.json", "r", encoding="utf-8")
+    resume_data = open("input/resume/resume.json", "r", encoding="utf-8")
+    contacts_data = open("input/resume/contacts.json", "r", encoding="utf-8")
+    experience_data = open("input/resume/experience.json", "r", encoding="utf-8")
+    cover_data = open("input/resume/cover.json", "r", encoding="utf-8")
 
     # print(resume_data)
 
