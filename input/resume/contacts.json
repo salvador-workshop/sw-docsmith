@@ -1,0 +1,28 @@
+{
+    "contacts": [
+        {
+            "type": "website",
+            "info": "https://salvador-workshop.ca"
+        },
+        {
+            "type": "email",
+            "info": "salvador.workshop@gmail.com"
+        },
+        {
+            "type": "linkedin",
+            "info": "https://linkedin.com/in/rjsalvadorr"
+        },
+        {
+            "type": "github",
+            "info": "https://github.com/salvador-workshop"
+        },
+        {
+            "type": "github",
+            "info": "https://github.com/guild-st-isidore-TO"
+        },
+        {
+            "type": "phone",
+            "info": "6474604027"
+        }
+    ]
+}

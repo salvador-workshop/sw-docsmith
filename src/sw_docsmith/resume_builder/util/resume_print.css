@@ -1,0 +1,30 @@
+@page {
+    size: letter;
+    margin: 1.5875cm;
+}
+
+table {
+    break-inside: avoid;
+}
+
+#title {
+    margin-top: -0.5em;
+    letter-spacing: 0.125em;
+}
+
+#subtitle {
+    letter-spacing: 0.225em;
+}
+
+#title+p img {
+    top: 4pt;
+}
+
+#title+p img:last-of-type {
+    left: initial;
+    right: 4pt;
+}
+
+#skills-quals+table {
+    width: 96%;
+}

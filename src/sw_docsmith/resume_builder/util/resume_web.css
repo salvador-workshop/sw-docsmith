@@ -1,0 +1,17 @@
+body {
+    margin: auto;
+    max-width: 42em;
+    background: #fefefe;
+}
+
+#title + p img {
+    top: 15pt;
+}
+
+#title + p img:last-of-type {
+    padding-left: calc(42em - 54pt);
+}
+
+.exp-heading+table tr td:first-of-type {
+    width: 33%;
+}

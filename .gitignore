@@ -224,3 +224,5 @@ output/*
 !output/.gitkeep
 input/*
 !input/.gitkeep
+!input/resume
+!input/img
