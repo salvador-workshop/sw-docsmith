@@ -226,3 +226,5 @@ input/*
 !input/.gitkeep
 !input/resume
 !input/img
+!input/img/example_1
+!input/ebook
