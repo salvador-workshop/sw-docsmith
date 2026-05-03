@@ -1,6 +1,6 @@
 [project]
 name = "sw-docsmith"
-version = "0.2.0"
+version = "0.2.1"
 description = ""
 authors = [
     {name = "RJ Salvador",email = "salvador.workshop@gmail.com"}
@@ -8,7 +8,9 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pandoc (>=2.4,<3.0)"
+    "pandoc (>=2.4,<3.0)",
+    "ebooklib (>=0.20,<0.21)",
+    "pillow (>=12.2.0,<13.0.0)"
 ]
 
 [tool.poetry]
@@ -20,6 +22,7 @@ build-resume = "src.sw_docsmith.build_resume:build_resume"
 build-pamphlet = "src.sw_docsmith.build_pamphlet:build_pamphlet"
 build-flashcards = "src.sw_docsmith.build_flashcards:build_flashcards"
 build-business-card = "src.sw_docsmith.build_business_card:build_business_card"
+process-image = "src.sw_docsmith.process_image:process_image"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
