@@ -1,0 +1,12 @@
+{
+  "output": {
+    "preserveFileName": false,
+    "slugifyFileName": true,
+    "filePrefix": "picsmith",
+    "fileCountStart": 1
+  },
+  "blackToColour": {
+    "foregroundColour": "#8080ff",
+    "backgroundColour": "#444444"
+  }
+}

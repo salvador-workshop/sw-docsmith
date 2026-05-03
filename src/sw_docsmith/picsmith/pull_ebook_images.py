@@ -22,7 +22,7 @@ def pull_ebook_images():
     setup_data = setup_transform()
 
     current_dir = setup_data['current_dir']
-    ebook_input_dir = setup_data['ebook_input_dir']
+    input_ebook_dir = setup_data['input_ebook_dir']
     output_dir = setup_data['output_dir']
 
     cfg_file_preserve_fname = setup_data['cfg_file_preserve_fname']
@@ -35,7 +35,7 @@ def pull_ebook_images():
     #///////////////////////////////////////////////////////////////////////
     #/////   MAIN LOOP   ///////////////////////////////////////////////////
 
-    for idx, filename in enumerate(os.listdir(ebook_input_dir)):
+    for idx, filename in enumerate(os.listdir(input_ebook_dir)):
         try:
             fName, fExtension = os.path.splitext(filename)
             if not fExtension.lower() == '.epub':
@@ -46,7 +46,7 @@ def pull_ebook_images():
             # Make sure that if it fails, the next book will be processed
             # instead of this whole app just choking and dying
             
-            file_path = os.path.join(ebook_input_dir, filename)
+            file_path = os.path.join(input_ebook_dir, filename)
             print(f'Finding all images from "{filename}"...')
             # print(file_path)
 
