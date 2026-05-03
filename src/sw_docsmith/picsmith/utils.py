@@ -9,9 +9,9 @@ def setup_transform():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     repo_dir = os.path.join(current_dir, "../../..")
 
-    input_dir = os.path.join(repo_dir, "input")
-    input_img_dir = os.path.join(input_dir, "img")
-    input_ebook_dir = os.path.join(input_dir, "ebook")
+    input_base = os.path.join(repo_dir, "input")
+    input_dir = os.path.join(input_base, "img")
+    input_ebook_dir = os.path.join(input_base, "ebook")
 
     output_dir = os.path.join(repo_dir, "output")
     output_img_dir = os.path.join(output_dir, "img")

@@ -1,6 +1,6 @@
 [project]
 name = "sw-docsmith"
-version = "0.2.1a2"
+version = "0.2.1"
 description = ""
 authors = [
     {name = "RJ Salvador",email = "salvador.workshop@gmail.com"}
