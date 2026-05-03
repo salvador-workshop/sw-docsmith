@@ -1,6 +1,6 @@
 import argparse
 import os
-from resume_builder import resume_parser, resume_builder
+from .resume_builder import resume_parser, resume_builder
 
 root_dir = os.path.join(os.path.dirname(__file__), "..", "..")
 input_dir = os.path.join(root_dir, "input")

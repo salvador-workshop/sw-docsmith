@@ -1,6 +1,6 @@
 [project]
 name = "sw-docsmith"
-version = "0.2.0a1"
+version = "0.2.0a2"
 description = ""
 authors = [
     {name = "RJ Salvador",email = "salvador.workshop@gmail.com"}
@@ -8,6 +8,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pandoc (>=2.4,<3.0)"
 ]
 
 [tool.poetry]
