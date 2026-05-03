@@ -22,6 +22,7 @@ build-resume = "src.sw_docsmith.build_resume:build_resume"
 build-pamphlet = "src.sw_docsmith.build_pamphlet:build_pamphlet"
 build-flashcards = "src.sw_docsmith.build_flashcards:build_flashcards"
 build-business-card = "src.sw_docsmith.build_business_card:build_business_card"
+process-image = "src.sw_docsmith.process_image:process_image"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
