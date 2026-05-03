@@ -2,16 +2,24 @@
 
 ...
 
-## Usage
+## USAGE
 
-### Cleaning
+### `poetry install`
 
-If a model named `whateverProjectName.stl` exists at `src/input/whateverProjectName/`, that can be cleaned by running:
+Sets up the project
 
-`poetry run transform-clean --project "whateverProjectName"`
+### `poetry run build_business_card`
 
-The output model would then be located at `output/whateverProjectName/whateverProjectName-cleaned.stl`
+...
 
-### Simplification
+### `poetry run build_flashcards`
 
-`poetry run transform-simplify --project "whateverProjectName"`
+...
+
+### `poetry run build_pamphlet`
+
+...
+
+### `poetry run build_resume`
+
+...

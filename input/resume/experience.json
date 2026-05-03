@@ -1,0 +1,238 @@
+{
+    "work_experience": [
+        {
+            "org_name": "Jonah Group",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Technical Developer",
+            "start_date": "2014-09-15",
+            "end_date": "2016-10-15",
+            "skills": [
+                "Java/J2EE",
+                "Spring/Struts",
+                "Hibernate",
+                "Oracle 11g",
+                "JavaScript",
+                "jQuery",
+                "HTML/CSS",
+                "Jenkins"
+            ],
+            "highlights": [
+                "Built credit app. sites for car dealers, linking users to 18,000+ dealers with 1,400+ finance sources.",
+                "Ensured that webpages conformed to the visual specs (responsive, cross-browser, cross-platform)."
+            ]
+        },
+        {
+            "org_name": "Intelex Technologies",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "UI Web Developer",
+            "start_date": "2017-06-15",
+            "end_date": "2019-02-15",
+            "skills": [
+                "React",
+                "JavaScript",
+                ".NET",
+                "HTML/CSS",
+                "SQL Server",
+                "Jenkins"
+            ],
+            "highlights": [
+                "Built a React UI on a legacy app allowing health and safety professionals to share best practices.",
+                "Focused on standards over time. Appointed to a group that wrote guidelines for code structure."
+            ]
+        },
+        {
+            "org_name": "Uncharted Software",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Software Engineer",
+            "start_date": "2019-11-15",
+            "end_date": "2021-04-15",
+            "skills": [
+                "Ember.js",
+                "Cytoscape",
+                "Express.js",
+                "Python",
+                "Docker Microservices",
+                "JavaScript",
+                "HTML/CSS"
+            ],
+            "highlights": [
+                "Worked on Causeworks, a research app for understanding scenarios through network graph analysis. Implemented as a Docker cluster with an Ember front-end and ML models running in the back-end.",
+                "Integrated external Python modules built in collaboration with CS researchers from Virginia Tech.",
+                "Reworked the front-end to align UI components to our design system, and render data effectively."
+            ]
+        },
+        {
+            "org_name": "Publicis Sapient",
+            "org_location": "Toronto, Canada (Remote)",
+            "exp_type": "work",
+            "exp_role": "Senior Associate (Experience Technology)",
+            "start_date": "2022-05-15",
+            "end_date": "2022-09-15",
+            "skills": [
+                "React",
+                "Next.js",
+                "Nx",
+                "TypeScript",
+                "JavaScript",
+                "HTML/CSS",
+                "Storybook",
+                "AEM"
+            ],
+            "highlights": [
+                "Worked on a Next.js app for a leading healthcare provider, smoothly integrating AEM with modern JS."
+            ]
+        },
+        {
+            "org_name": "Autodesk Construction Solutions",
+            "org_location": "Toronto, Canada (Remote)",
+            "exp_type": "work",
+            "exp_role": "Senior Software Engineer",
+            "start_date": "2022-11-15",
+            "end_date": "2024-01-15",
+            "skills": [
+                "React",
+                "Node.js",
+                "TypeScript",
+                "JavaScript",
+                "HTML/CSS",
+                "Storybook",
+                "Revit"
+            ],
+            "highlights": [
+                "Worked on Autodesk Takeoff, an online construction estimation tool for 2D sheets and 3D models.",
+                "Enhanced the React front-end and Three.js-based 3D model viewer's filtering. This gave users more options for ensuring accuracy, double-checking records, and speeding up their workflows.",
+                "Upgraded team's UI component library to conform with the organization's high technical standards."
+            ]
+        },
+        {
+            "org_name": "Konrad Group",
+            "org_location": "Toronto, Canada (Hybrid)",
+            "exp_type": "work",
+            "exp_role": "Senior Software Developer",
+            "start_date": "2024-07-15",
+            "end_date": "2024-11-15",
+            "skills": [
+                "Azure Cognitive Services (Computer vision, Doc. parsing)",
+                "JavaScript",
+                "NestJS"
+            ],
+            "highlights": [
+                "Partnered with a financial transaction processor working closely with the \"Big Five\" Canadian banks.",
+                "Upgraded cloud apps which leverage Azure Cognitive Services for anti-fraud verification."
+            ]
+        },
+        {
+            "org_name": "Salvador Workshop",
+            "org_location": "Toronto, Canada",
+            "exp_type": "work",
+            "exp_role": "Founder, Lead Developer",
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "skills": [
+                "2D/3D Modeling",
+                "Parametric Design",
+                "NPM Library Design",
+                "JavaScript",
+                "Open Source Dev't"
+            ],
+            "highlights": [
+                "Salvador Workshop (SW) is a tech-powered design studio, currently developing custom software tools for product design.",
+                "\"swcad-js\" is SW's open source CAD coding toolkit in JavaScript. This library extends JSCAD to facilitate 2D and 3D design."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "org_name": "Humber College",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "Ontario College Diploma (Computer Programmer)",
+            "start_date": "2012-09-15",
+            "end_date": "2014-04-15",
+            "skills": [
+                "Java",
+                "JavaScript",
+                "HTML/CSS",
+                "JavaScript",
+                "Oracle 11g",
+                "Git"
+            ],
+            "highlights": [
+                "Learned the fundamental principles of software engineering and how to work well in a team."
+            ]
+        },
+        {
+            "org_name": "George Brown College",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "Certificate (Architectural Technology)",
+            "start_date": "2021-09-15",
+            "end_date": "2024-04-15",
+            "skills": [
+                "Revit",
+                "AutoCAD",
+                "Sketchup",
+                "Adobe Illustrator & Photoshop"
+            ],
+            "highlights": [
+                "Learned to create 2D/3D models to industry standards, plus architectural theory and building science."
+            ]
+        },
+        {
+            "org_name": "BrainStation",
+            "org_location": "Toronto, Canada",
+            "exp_type": "education",
+            "education_cred": "UX Design Certificate",
+            "start_date": "2024-07-15",
+            "end_date": "2024-09-15",
+            "skills": [
+                "Figma",
+                "Web Design Theory",
+                "Design Systems"
+            ],
+            "highlights": [
+                "Learned industry-standard processes for UX design (interviews, testing, wireframing, visuals, etc)."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "org_name": "Guild of St. Isidore (TO)",
+            "org_location": "Toronto, Canada",
+            "exp_type": "project",
+            "project_name": "EdiMeli",
+            "exp_role": "Lead Developer",
+            "start_date": "2025-06-02",
+            "end_date": null,
+            "skills": [
+                "Python",
+                "LilyPond (LY)",
+                "GABC"
+            ],
+            "highlights": [
+                "EdiMeli is a music typesetting toolkit for musicians working with Gregorian notation (square notes)."
+            ]
+        }
+    ],
+    "volunteering": [
+        {
+            "org_name": "St. Vincent de Paul Parish (Roncesvalles)",
+            "org_location": "Toronto, Canada",
+            "exp_type": "volunteering",
+            "exp_role": "Singer / Cantor",
+            "start_date": "2024-10-15",
+            "end_date": null,
+            "skills": [
+                "Vocal and choral musicianship",
+                "Gregorian chant",
+                "Latin language"
+            ],
+            "highlights": [
+                "Serving my community by singing with the choir in mass, and chanting during communal prayer."
+            ]
+        }
+    ]
+}
