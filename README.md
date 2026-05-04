@@ -21,4 +21,4 @@ Processes images in `input/img`, with images sent to `output/img/`
 
 #### Operation Mode 5: Copy E-Book Images
 
-This rips all the images from a `.epub` files in `input/ebook`, with images sent to `output/whatever-ebook-name/`
+This rips all the images from `.epub` files in `input/ebook`, with images sent to `output/whatever-ebook-name/`
