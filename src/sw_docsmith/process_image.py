@@ -26,7 +26,9 @@ def process_image():
     mode_help_msg = "Available op. modes:  " + ", ".join(mode_help_msgs)
     parser.add_argument(
         "--mode",
+        "-m",
         dest="mode",
+        choices=[1, 2, 3, 4, 5],
         default=0,
         help=mode_help_msg,
     )

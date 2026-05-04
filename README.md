@@ -8,18 +8,17 @@
 
 Sets up the project
 
-### `poetry run build_business_card`
+### `poetry run build-resume`
 
-...
+Builds a resume with the data in `input/resume/`, with completed resume data sent to `output/resume/`
 
-### `poetry run build_flashcards`
+### `poetry run process-image`
 
-...
+Processes images in `input/img`, with images sent to `output/img/`
 
-### `poetry run build_pamphlet`
+`poetry run process-image --help`
+`poetry run process-image --mode 3`
 
-...
+#### Operation Mode 5: Copy E-Book Images
 
-### `poetry run build_resume`
-
-...
+This rips all the images from a `.epub` files in `input/ebook`, with images sent to `output/whatever-ebook-name/`
