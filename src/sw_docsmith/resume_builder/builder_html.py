@@ -27,9 +27,9 @@ def build_cover_letter_html(build_opts):
         "--embed-resources",
         "--standalone",
         "--css",
-        "src/sw_docsmith/resume_builder/util/resume_style.css",
+        "src/sw_docsmith/resume_builder/util/cover_letter_style.css",
         "--css",
-        "src/sw_docsmith/resume_builder/util/resume_web.css",
+        "src/sw_docsmith/resume_builder/util/cover_letter_web.css",
     ]
     pandoc.write(doc, "output/resume/cover-letter.html", format="html", options=write_opts)
 

@@ -29,9 +29,9 @@ def build_cover_letter_pdf(build_opts):
     weasyprint_opts = "-e utf8 -p --hinting"
     write_opts = [
         "--css",
-        "src/sw_docsmith/resume_builder/util/resume_style.css",
+        "src/sw_docsmith/resume_builder/util/cover_letter_style.css",
         "--css",
-        "src/sw_docsmith/resume_builder/util/resume_print.css",
+        "src/sw_docsmith/resume_builder/util/cover_letter_print.css",
         "--to",
         "html",
         "--pdf-engine-opt",

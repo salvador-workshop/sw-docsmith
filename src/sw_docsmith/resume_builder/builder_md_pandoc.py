@@ -152,23 +152,29 @@ def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
     # ------------
     # Heading, Intro
 
+    out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
     out_file_full_md.write(
-        '![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg "Decorative icon (left)")  \n'
+        '![](src/sw_docsmith/resume_builder/icons/icon-shell.svg "Decorative icon (left)")  \n'
     )
     out_file_full_md.write(
         '![](src/sw_docsmith/resume_builder/icons/sw-qr.svg "QR code (right)")\n\n'
     )
+    out_file_full_md.write(f"#### Cover Letter {{#subtitle}}\n")
+    out_file_full_md.write(f"\n")
 
     out_file_full_md.write(f"{cover_info["greeting"]}\n")
+    out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"{cover_info["career_objective"]}\n")
     out_file_full_md.write(f"\n")
 
     # ------------
     # Body
 
-    out_file_full_md.write(f"{cover_info["career_objective"]}\n")
-
     for rel_exp in cover_info["relevant_experience"]:
-        out_file_full_md.write(f"{rel_exp}\n")
+        out_file_full_md.write(f"{rel_exp} ")
+
+    out_file_full_md.write(f"\n\n")
 
     out_file_full_md.write(f"{cover_info["closing"]}\n")
     out_file_full_md.write(f"\n")
@@ -177,7 +183,7 @@ def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
     # Contact
 
     out_file_full_md.write(f"{cover_info["signoff"]},  \n")
-    out_file_full_md.write(f"{resume_info["name"]},  \n")
+    out_file_full_md.write(f"{resume_info["name"]}  \n")
     out_file_full_md.write(f"\n")
 
     out_file_full_md.write(f"{contact_email['info']}  \n")
