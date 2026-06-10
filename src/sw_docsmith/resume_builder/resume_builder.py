@@ -41,7 +41,7 @@ def build_resume_tiny(complete_resume_info):
 
 
 def build_cover_letter(complete_resume_info):
-    builder_md_pandoc.build_cover_letter_md_pandoc(complete_resume_info["resume"], build_opts)
+    builder_md_pandoc.build_cover_letter_md_pandoc(complete_resume_info, build_opts)
     builder_html.build_cover_letter_html(build_opts)
     builder_pdf.build_cover_letter_pdf(build_opts)
 

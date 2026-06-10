@@ -135,123 +135,58 @@ def build_resume_full_md_pandoc(resume_info, build_opts):
 
 
 def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
+    resume_info = cover_letter_info["resume"]
+    cover_info = cover_letter_info["cover"]
+    contact_info = resume_info["contact_info"]
+
+    contact_email = [x for x in contact_info if x["type"] == "email"][0]
+    contact_phone = [x for x in contact_info if x["type"] == "phone"][0]
+    contact_website = [x for x in contact_info if x["type"] == "website"][0]
+    contact_github = [x for x in contact_info if x["type"] == "github"][0]
+    contact_linkedin = [x for x in contact_info if x["type"] == "linkedin"][0]
+
     out_file_full_md = open(
         "output/resume/cover-letter-pandoc.md", "w", encoding="utf-8"
     )
 
-    # -----
-    # Intro
+    # ------------
+    # Heading, Intro
 
-    out_file_full_md.write(f"# {cover_letter_info["name"]} {{#title}}\n\n")
     out_file_full_md.write(
         '![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg "Decorative icon (left)")  \n'
     )
     out_file_full_md.write(
         '![](src/sw_docsmith/resume_builder/icons/sw-qr.svg "QR code (right)")\n\n'
     )
-    out_file_full_md.write(f"#### {cover_letter_info["subtitle"]} {{#subtitle}}\n\n")
+
+    out_file_full_md.write(f"{cover_info["greeting"]}\n")
+    out_file_full_md.write(f"\n")
 
     # ------------
-    # Contact Info
+    # Body
 
-    num_break = 3
-    contact_cells = []
-    contact_cells_row_idx = -1
-    for contact_idx in range(len(cover_letter_info["contact_info"])):
-        contact = cover_letter_info["contact_info"][contact_idx]
-        if contact_idx % num_break == 0:
-            contact_cells.append([])
-            contact_cells_row_idx += 1
-        link = contact["info"]
-        copy = contact["info"].replace("https://", "")
-        contact_icon_src = "src/sw_docsmith/resume_builder/icons/generic.svg"
+    out_file_full_md.write(f"{cover_info["career_objective"]}\n")
 
-        if contact["type"] == "website":
-            contact_icon_src = "src/sw_docsmith/resume_builder/icons/user-circle.svg"
-        elif contact["type"] == "email":
-            link = f"mailto:{contact["info"] }"
-            contact_icon_src = "src/sw_docsmith/resume_builder/icons/email.svg"
-        elif contact["type"] == "phone":
-            link = f"tel:{format_phone_num(contact["info"], "html")}"
-            copy = format_phone_num(contact["info"])
-            contact_icon_src = "src/sw_docsmith/resume_builder/icons/phone.svg"
-        elif contact["type"] == "github":
-            copy = contact["info"].replace("https://github.com/", "")
-            contact_icon_src = "src/sw_docsmith/resume_builder/icons/github.svg"
-        elif contact["type"] == "linkedin":
-            copy = contact["info"].replace("https://linkedin.com/in/", "")
-            contact_icon_src = "src/sw_docsmith/resume_builder/icons/linkedin.svg"
+    for rel_exp in cover_info["relevant_experience"]:
+        out_file_full_md.write(f"{rel_exp}\n")
 
-        contact_alt = f"Icon ({contact["type"]})"
-        contact_icon = f'![{contact_alt}]({contact_icon_src} "{contact_alt}")'
-        contact_cells[contact_cells_row_idx].append(
-            f"{contact_icon}&nbsp; [{copy}]({link})"
-        )
-
-    contacts_table = build_minimal_md_table(contact_cells)
-
-    out_file_full_md.write(contacts_table)
-    out_file_full_md.write("\n")
+    out_file_full_md.write(f"{cover_info["closing"]}\n")
+    out_file_full_md.write(f"\n")
 
     # ------------
-    # Objective
+    # Contact
 
-    out_file_full_md.write(f"## Objective\n\n")
-    out_file_full_md.write(f"{cover_letter_info["objective"]}\n\n")
+    out_file_full_md.write(f"{cover_info["signoff"]},  \n")
+    out_file_full_md.write(f"{resume_info["name"]},  \n")
+    out_file_full_md.write(f"\n")
 
-    # ------------
-    # Skills & Qualifications
+    out_file_full_md.write(f"{contact_email['info']}  \n")
+    out_file_full_md.write(f"{contact_phone['info']}  \n")
+    out_file_full_md.write(f"\n")
 
-    out_file_full_md.write(f"## Skills & Qualifications {{#skills-quals}}\n\n")
-
-    skill_cells = []
-    for skill in cover_letter_info["skills_qualifications"]:
-        skill_cells.append(format_skill_qual_md(skill))
-    skills_table = build_minimal_row_md_table(skill_cells)
-    out_file_full_md.write(skills_table)
-    out_file_full_md.write("\n")
-
-    # ------------
-    # Technical Experience
-
-    out_file_full_md.write(f"## Technical Experience\n\n")
-
-    for work_exp in sorted(
-        cover_letter_info["work_experience"], key=sort_exp, reverse=True
-    ):
-        build_resume_exp_md_pandoc(work_exp, out_file_full_md)
-
-    # ------------
-    # Projects
-
-    out_file_full_md.write(f"## Projects\n\n")
-
-    for proj_exp in sorted(cover_letter_info["projects"], key=sort_exp, reverse=True):
-        build_resume_exp_md_pandoc(proj_exp, out_file_full_md)
-
-    # ------------
-    # Technical Education
-
-    out_file_full_md.write(f"## Education\n\n")
-
-    for edu_exp in sorted(cover_letter_info["education"], key=sort_exp, reverse=True):
-        build_resume_exp_md_pandoc(edu_exp, out_file_full_md)
-
-    # ------------
-    # Volunteering
-    if "volunteering" not in build_opts["skip"]:
-        out_file_full_md.write(f"## Volunteering\n\n")
-
-        for vol_exp in sorted(
-            cover_letter_info["volunteering"], key=sort_exp, reverse=True
-        ):
-            build_resume_exp_md_pandoc(vol_exp, out_file_full_md)
-
-    # ------------
-    # About Me
-
-    out_file_full_md.write(f"## About Me\n\n")
-    out_file_full_md.write(f"{cover_letter_info["about"]}\n")
+    out_file_full_md.write(f"{contact_website['info']}  \n")
+    out_file_full_md.write(f"{contact_github['info']}  \n")
+    out_file_full_md.write(f"{contact_linkedin['info']}  \n")
 
     # -------
     # Cleanup
