@@ -1,4 +1,5 @@
 {
+    "subject": "Inquiring about software development roles",
     "greeting": "Hi, my name is RJ. I'm an experienced software engineer seeking roles that leverage my tech experience alongside skills in architecture tech and creative fields.",
     "career_objective": "I'm looking for software engineering roles involving web development, 2D/3D modelling, or data visualization.",
     "relevant_experience": [
@@ -7,5 +8,6 @@
         "Over the years, I've gained a deep familiarity with JavaScript/HTML/CSS and large-scale web frameworks (React, Ember).",
         "In addition, I've worked with complex data visualizations in a research project (Uncharted Software) and architectural estimation (Autodesk Construction Solutions)"
     ],
-    "closing": "If your organization can use a software engineer with my skills, please reach out (resume attached)"
+    "closing": "If your organization can use a software engineer with my skills, please reach out (resume attached)",
+    "signoff": "Thank you for your time"
 }

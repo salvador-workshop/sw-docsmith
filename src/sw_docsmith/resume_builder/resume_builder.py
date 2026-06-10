@@ -52,8 +52,13 @@ def build_cover_letter(complete_resume_info):
     # Cover Letter
 
     cover_obj = json.dumps(complete_resume_info["cover"], indent=2)
+    contact_obj = json.dumps(complete_resume_info["resume"]["contact_info"], indent=2)
+
+
     # print(cover_obj)
     out_file_cover.write(cover_obj)
+    out_file_cover.write("\n")
+    out_file_cover.write(contact_obj)
     out_file_cover.write("\n")
 
     # -------
