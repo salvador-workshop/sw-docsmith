@@ -21,3 +21,22 @@ def build_resume_full_pdf(build_opts):
     pandoc.write(doc, "output/resume/resume-full.pdf", format="pdf", options=write_opts)
 
     return 0
+
+def build_cover_letter_pdf(build_opts):
+    markdown_data = open("output/resume/cover-letter-pandoc.md", "r", encoding="utf-8")
+    doc = pandoc.read(markdown_data.read())
+
+    weasyprint_opts = "-e utf8 -p --hinting"
+    write_opts = [
+        "--css",
+        "src/sw_docsmith/resume_builder/util/resume_style.css",
+        "--css",
+        "src/sw_docsmith/resume_builder/util/resume_print.css",
+        "--to",
+        "html",
+        "--pdf-engine-opt",
+        weasyprint_opts,
+    ]
+    pandoc.write(doc, "output/resume/cover-letter.pdf", format="pdf", options=write_opts)
+
+    return 0

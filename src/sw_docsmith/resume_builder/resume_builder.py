@@ -41,30 +41,8 @@ def build_resume_tiny(complete_resume_info):
 
 
 def build_cover_letter(complete_resume_info):
-    out_file_cover = open("output/resume/cover.txt", "w", encoding="utf-8")
-
-    # -----
-    # Intro
-
-    # print_splash(out_file_cover)
-
-    # ------------
-    # Cover Letter
-
-    cover_obj = json.dumps(complete_resume_info["cover"], indent=2)
-    contact_obj = json.dumps(complete_resume_info["resume"]["contact_info"], indent=2)
-
-
-    # print(cover_obj)
-    out_file_cover.write(cover_obj)
-    out_file_cover.write("\n")
-    out_file_cover.write(contact_obj)
-    out_file_cover.write("\n")
-
-    # -------
-    # Cleanup
-    # -------
-
-    out_file_cover.close()
+    builder_md_pandoc.build_cover_letter_md_pandoc(complete_resume_info["resume"], build_opts)
+    builder_html.build_cover_letter_html(build_opts)
+    builder_pdf.build_cover_letter_pdf(build_opts)
 
     return 0
