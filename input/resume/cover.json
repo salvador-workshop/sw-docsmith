@@ -1,6 +1,11 @@
 {
-    "greeting": "",
-    "career_objective": "",
-    "relevant_experience": [],
-    "closing": ""
+    "greeting": "Hi, my name is RJ. I'm an experienced software engineer seeking roles that leverage my tech experience alongside skills in architecture tech and creative fields.",
+    "career_objective": "I'm looking for software engineering roles involving web development, 2D/3D modelling, or data visualization.",
+    "relevant_experience": [
+        "Having worked in tech since 2014, my career developed a strong focus on the front-end, UI/UX, data visualization, and 3D modeling.",
+        "I can make an impact on many phases of a web project, having worked with teams at different phases of the software development lifecycle (kick-off, dev, maintenance).",
+        "Over the years, I've gained a deep familiarity with JavaScript/HTML/CSS and large-scale web frameworks (React, Ember).",
+        "In addition, I've worked with complex data visualizations in a research project (Uncharted Software) and architectural estimation (Autodesk Construction Solutions)"
+    ],
+    "closing": "If your organization can use a software engineer with my skills, please reach out (resume attached)"
 }
