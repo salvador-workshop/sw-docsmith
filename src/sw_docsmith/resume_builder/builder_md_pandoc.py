@@ -12,14 +12,20 @@ from .utils_md import (
 
 
 def build_resume_full_md_pandoc(resume_info, build_opts):
-    out_file_full_md = open("output/resume/resume-full-pandoc.md", "w", encoding="utf-8")
+    out_file_full_md = open(
+        "output/resume/resume-full-pandoc.md", "w", encoding="utf-8"
+    )
 
     # -----
     # Intro
 
     out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
-    out_file_full_md.write("![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg \"Decorative icon (left)\")  \n")
-    out_file_full_md.write("![](src/sw_docsmith/resume_builder/icons/sw-qr.svg \"QR code (right)\")\n\n")
+    out_file_full_md.write(
+        '![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg "Decorative icon (left)")  \n'
+    )
+    out_file_full_md.write(
+        '![](src/sw_docsmith/resume_builder/icons/sw-qr.svg "QR code (right)")\n\n'
+    )
     out_file_full_md.write(f"#### {resume_info["subtitle"]} {{#subtitle}}\n\n")
 
     # ------------
@@ -119,6 +125,74 @@ def build_resume_full_md_pandoc(resume_info, build_opts):
 
     out_file_full_md.write(f"## About Me\n\n")
     out_file_full_md.write(f"{resume_info["about"]}\n")
+
+    # -------
+    # Cleanup
+    # -------
+
+    out_file_full_md.close()
+    return 0
+
+
+def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
+    resume_info = cover_letter_info["resume"]
+    cover_info = cover_letter_info["cover"]
+    contact_info = resume_info["contact_info"]
+
+    contact_email = [x for x in contact_info if x["type"] == "email"][0]
+    contact_phone = [x for x in contact_info if x["type"] == "phone"][0]
+    contact_website = [x for x in contact_info if x["type"] == "website"][0]
+    contact_github = [x for x in contact_info if x["type"] == "github"][0]
+    contact_linkedin = [x for x in contact_info if x["type"] == "linkedin"][0]
+
+    out_file_full_md = open(
+        "output/resume/cover-letter-pandoc.md", "w", encoding="utf-8"
+    )
+
+    # ------------
+    # Heading, Intro
+
+    out_file_full_md.write(f"# {resume_info["name"]} {{#title}}\n\n")
+    out_file_full_md.write(
+        '![](src/sw_docsmith/resume_builder/icons/icon-shell.svg "Decorative icon (left)")  \n'
+    )
+    out_file_full_md.write(
+        '![](src/sw_docsmith/resume_builder/icons/sw-qr.svg "QR code (right)")\n\n'
+    )
+    out_file_full_md.write(f"#### Cover Letter {{#subtitle}}\n")
+    out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"{cover_info["greeting"]}\n")
+    out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"{cover_info["career_objective"]}\n")
+    out_file_full_md.write(f"\n")
+
+    # ------------
+    # Body
+
+    for rel_exp in cover_info["relevant_experience"]:
+        out_file_full_md.write(f"{rel_exp} ")
+
+    out_file_full_md.write(f"\n\n")
+
+    out_file_full_md.write(f"{cover_info["closing"]}\n")
+    out_file_full_md.write(f"\n")
+
+    # ------------
+    # Contact
+
+    out_file_full_md.write(f"{cover_info["signoff"]},  \n")
+    out_file_full_md.write(f"{resume_info["name"]}  \n")
+    out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"{contact_email['info']}  \n")
+    out_file_full_md.write(f"{contact_phone['info']}  \n")
+    out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"{contact_website['info']}  \n")
+    out_file_full_md.write(f"{contact_github['info']}  \n")
+    out_file_full_md.write(f"{contact_linkedin['info']}  \n")
 
     # -------
     # Cleanup
