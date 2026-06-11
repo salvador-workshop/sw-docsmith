@@ -142,7 +142,7 @@ def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
     contact_email = [x for x in contact_info if x["type"] == "email"][0]
     contact_phone = [x for x in contact_info if x["type"] == "phone"][0]
     contact_website = [x for x in contact_info if x["type"] == "website"][0]
-    contact_github = [x for x in contact_info if x["type"] == "github"][0]
+    contact_github = [x for x in contact_info if x["type"] == "github"][1]
     contact_linkedin = [x for x in contact_info if x["type"] == "linkedin"][0]
 
     out_file_full_md = open(
@@ -183,16 +183,17 @@ def build_cover_letter_md_pandoc(cover_letter_info, build_opts):
     # Contact
 
     out_file_full_md.write(f"{cover_info["signoff"]},  \n")
-    out_file_full_md.write(f"{resume_info["name"]}  \n")
-    out_file_full_md.write(f"\n")
+    out_file_full_md.write(f"<br/>\n")
 
-    out_file_full_md.write(f"{contact_email['info']}  \n")
-    out_file_full_md.write(f"{contact_phone['info']}  \n")
-    out_file_full_md.write(f"\n")
+    out_file_full_md.write(f"**{resume_info["name"]}**  \n")
+    out_file_full_md.write(f"[{contact_email['info']}](mailto:{contact_email['info']})  \n")
+    out_file_full_md.write(f"[{format_phone_num(contact_phone['info'])}](tel:{format_phone_num(contact_phone['info'], "html")})  \n")
 
-    out_file_full_md.write(f"{contact_website['info']}  \n")
-    out_file_full_md.write(f"{contact_github['info']}  \n")
-    out_file_full_md.write(f"{contact_linkedin['info']}  \n")
+    out_file_full_md.write(f"<br/>\n")
+
+    out_file_full_md.write(f"[{contact_website['info']}]({contact_website['info']})  \n")
+    out_file_full_md.write(f"[{contact_github['info']}]({contact_github['info']})  \n")
+    out_file_full_md.write(f"[{contact_linkedin['info']}]({contact_linkedin['info']})  \n")
 
     # -------
     # Cleanup
