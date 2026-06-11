@@ -10,14 +10,14 @@ output_dir = os.path.join(root_dir, "output")
 script_desc = "Transforms models in the given input project"
 
 
-def build_resume():
+def build_search_helper():
 
     parser = argparse.ArgumentParser(description=script_desc)
     args = parser.parse_args()
 
     print("\n----------------------------------------------------------------\n")
 
-    print(f"> BUILDING RESUME")
+    print(f"> BUILDING JOB SEARCH HELPER")
 
     Path("output/resume").mkdir(parents=True, exist_ok=True)
     Path("output/img").mkdir(parents=True, exist_ok=True)
@@ -29,4 +29,4 @@ def build_resume():
 
 
 if __name__ == "__build_resume__":
-    build_resume()
+    build_search_helper()
