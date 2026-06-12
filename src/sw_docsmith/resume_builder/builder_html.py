@@ -41,20 +41,20 @@ def build_cover_letter_html(build_opts):
     return 0
 
 
-def build_search_helper_html(complete_resume_info, build_opts):
-    markdown_data = open("output/resume/cover-letter-pandoc.md", "r", encoding="utf-8")
+def build_search_helper_html(build_opts):
+    markdown_data = open("output/resume/search-helper-pandoc.md", "r", encoding="utf-8")
     doc = pandoc.read(markdown_data.read())
 
     write_opts = [
         "--embed-resources",
         "--standalone",
         "--css",
-        "src/sw_docsmith/resume_builder/util/cover_letter_style.css",
+        "src/sw_docsmith/resume_builder/util/search_helper_style.css",
         "--css",
-        "src/sw_docsmith/resume_builder/util/cover_letter_web.css",
+        "src/sw_docsmith/resume_builder/util/search_helper_web.css",
     ]
     pandoc.write(
-        doc, "output/resume/cover-letter.html", format="html", options=write_opts
+        doc, "output/resume/search-helper.html", format="html", options=write_opts
     )
 
     return 0

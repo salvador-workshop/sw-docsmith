@@ -48,6 +48,7 @@ def build_cover_letter(complete_resume_info):
 
 
 def build_search_helper(complete_resume_info):
-    builder_html.build_search_helper_html(complete_resume_info, build_opts)
+    builder_md_pandoc.build_search_helper_md_pandoc(complete_resume_info, build_opts)
+    builder_html.build_search_helper_html(build_opts)
 
     return 0

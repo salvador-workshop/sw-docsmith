@@ -23,7 +23,7 @@ def build_search_helper():
     Path("output/img").mkdir(parents=True, exist_ok=True)
 
     resume_info = resume_parser.parse_resume()
-    resume_builder.build_resume_full(resume_info)
+    resume_builder.build_search_helper(resume_info)
 
     print("\n----------------------------------------------------------------\n")
 
