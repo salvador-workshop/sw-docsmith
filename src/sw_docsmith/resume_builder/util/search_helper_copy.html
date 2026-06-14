@@ -19,6 +19,7 @@
         const buttonElements = document.querySelectorAll('.btn-copy')
         buttonElements.forEach(btnElement => {
             btnElement.textContent = 'Copy text';
+            btnElement.style.backgroundColor = ''
         })
 
         try {
@@ -26,6 +27,7 @@
             console.log('Content copied to clipboard');
 
             currentButton.textContent = 'Copied!';
+            currentButton.style.backgroundColor = '#77A265';
         } catch (err) {
             console.error('Failed to copy: ', err);
         }
