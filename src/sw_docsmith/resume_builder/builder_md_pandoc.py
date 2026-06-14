@@ -264,13 +264,15 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
                         'id': f"resume.{resume_ctg}.{idx}",
                         'value': resume_subctg_data,
                     }
+                    print(new_resume_data)
+                    resume_data.append(new_resume_data)
             else:
                 new_resume_data = {
                     'id': f"resume.{resume_ctg}",
                     'value': resume_val,
                 }
-            print(new_resume_data)
-            resume_data.append(new_resume_data)
+                print(new_resume_data)
+                resume_data.append(new_resume_data)
 
     cover_data = []
     for cover_ctg in cover_info:
