@@ -309,13 +309,27 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     # -------
     # Data Writing
     # -------
-    out_file_full_md.write(f"\n")
 
-    # out_file_full_md.write(f"---\n")
-    # out_file_full_md.write(
-    #     f"header-includes: <script></script>\n"
-    # )
-    # out_file_full_md.write(f"---\n")
+    out_file_full_md.write(f"\n")
+    out_file_full_md.write(f"## Job Boards \n")
+
+    out_file_full_md.write(
+        f"- [LinkedIn](https://www.linkedin.com/jobs/){{target='blank'}}\n"
+    )
+    out_file_full_md.write(f"- [Indeed](https://ca.indeed.com/){{target='blank'}}\n")
+    out_file_full_md.write(
+        f"- [ZipRecruiter](https://www.ziprecruiter.com/){{target='blank'}}\n"
+    )
+
+    out_file_full_md.write(f"\n")
+    out_file_full_md.write(f"## Search Keywords \n")
+
+    out_file_full_md.write(f"- JavaScript\n")
+    out_file_full_md.write(f"- Frontend\n")
+    out_file_full_md.write(f"- UI\n")
+
+    out_file_full_md.write(f"\n")
+    out_file_full_md.write(f"## Contacts\n")
 
     for contact_details in contact_data:
         out_file_full_md.write(f"### {contact_details['id']} {{.data-heading}}\n")
@@ -326,6 +340,8 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
         out_file_full_md.write(f"```\n{contact_details['value']}\n```\n")
         out_file_full_md.write(f"\n")
 
+    out_file_full_md.write(f"## Resume\n")
+
     for resume_details in resume_data:
         out_file_full_md.write(f"### {resume_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
@@ -334,6 +350,8 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{resume_details['value']}\n```\n")
         out_file_full_md.write(f"\n")
+
+    out_file_full_md.write(f"## Cover Letter\n")
 
     for cover_details in cover_data:
         out_file_full_md.write(f"### {cover_details['id']} {{.data-heading}}\n")

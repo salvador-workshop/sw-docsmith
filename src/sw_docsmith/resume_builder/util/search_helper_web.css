@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    max-width: 42em;
+    max-width: 60em;
     background: #fefefe;
 }
 
@@ -9,7 +9,7 @@ body {
 }
 
 #title + p img:last-of-type {
-    padding-left: calc(42em - 54pt);
+    padding-left: calc(60em - 54pt);
 }
 
 .exp-heading+table tr td:first-of-type {
