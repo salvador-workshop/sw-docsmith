@@ -234,51 +234,66 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
         '![](src/sw_docsmith/resume_builder/icons/icon-shell.svg "Decorative icon (left)")  \n'
     )
     out_file_full_md.write(
-        '![](src/sw_docsmith/resume_builder/icons/sw-qr.svg "QR code (right)")\n\n'
+        '![](src/sw_docsmith/resume_builder/icons/icon-merlion.svg "Decorative icon (right)")  \n\n'
     )
-    out_file_full_md.write(f"#### Cover Letter {{#subtitle}}\n")
+    out_file_full_md.write(f"#### Job Search Helper {{#subtitle}}\n")
     out_file_full_md.write(f"\n")
 
-    out_file_full_md.write(f"{cover_info["greeting"]}\n")
-    out_file_full_md.write(f"\n")
+    # -------
+    # Data Setup
+    # -------
 
-    out_file_full_md.write(f"{cover_info["career_objective"]}\n")
-    out_file_full_md.write(f"\n")
+    contact_data = []
+    for contact_ctg in contact_info:
+        print('contact_ctg')
+        new_contact_data = {
+            'id': f"contact.{contact_ctg['type']}",
+            'value': contact_ctg['info'],
+        }
+        print(new_contact_data)
+        contact_data.append(new_contact_data)
 
-    # ------------
-    # Body
+    resume_data = []
+    for resume_ctg in resume_info:
+        print('resume_ctg')
+        new_resume_data = {
+            'id': f"resume.{resume_ctg}",
+            'value': resume_info[resume_ctg],
+        }
+        print(new_resume_data)
+        resume_data.append(new_resume_data)
 
-    for rel_exp in cover_info["relevant_experience"]:
-        out_file_full_md.write(f"{rel_exp} ")
+    cover_data = []
+    for cover_ctg in cover_info:
+        print('cover_ctg')
+        new_cover_data = {
+            'id': f"cover.{cover_ctg}",
+            'value': cover_info[cover_ctg],
+        }
+        print(new_cover_data)
+        cover_data.append(new_cover_data)
 
-    out_file_full_md.write(f"\n\n")
+    # -------
+    # Data Writing
+    # -------
 
-    out_file_full_md.write(f"{cover_info["closing"]}\n")
-    out_file_full_md.write(f"\n")
-
-    # ------------
-    # Contact
-
-    out_file_full_md.write(f"{cover_info["signoff"]},  \n")
-    out_file_full_md.write(f"<br/>\n")
-
-    out_file_full_md.write(f"**{resume_info["name"]}**  \n")
-    out_file_full_md.write(
-        f"[{contact_email['info']}](mailto:{contact_email['info']})  \n"
-    )
-    out_file_full_md.write(
-        f"[{format_phone_num(contact_phone['info'])}](tel:{format_phone_num(contact_phone['info'], "html")})  \n"
-    )
-
-    out_file_full_md.write(f"<br/>\n")
-
-    out_file_full_md.write(
-        f"[{contact_website['info']}]({contact_website['info']})  \n"
-    )
-    out_file_full_md.write(f"[{contact_github['info']}]({contact_github['info']})  \n")
-    out_file_full_md.write(
-        f"[{contact_linkedin['info']}]({contact_linkedin['info']})  \n"
-    )
+    for contact_details in contact_data:
+        out_file_full_md.write(f"{contact_details['id']}\n")
+        out_file_full_md.write(f"\n")
+        out_file_full_md.write(f"{contact_details['value']}\n")
+        out_file_full_md.write(f"\n")
+    
+    for resume_details in resume_data:
+        out_file_full_md.write(f"{resume_details['id']}\n")
+        out_file_full_md.write(f"\n")
+        out_file_full_md.write(f"{resume_details['value']}\n")
+        out_file_full_md.write(f"\n")
+    
+    for cover_details in cover_data:
+        out_file_full_md.write(f"{cover_details['id']}\n")
+        out_file_full_md.write(f"\n")
+        out_file_full_md.write(f"{cover_details['value']}\n")
+        out_file_full_md.write(f"\n")
 
     # -------
     # Cleanup
