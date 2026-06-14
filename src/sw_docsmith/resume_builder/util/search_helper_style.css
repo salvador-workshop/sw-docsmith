@@ -154,6 +154,10 @@ h2+* {
     margin-top: 0.33em
 }
 
+.data-heading {
+    margin-top: 1.5em;
+}
+
 /*-------------*\
  * Tables
 \*-------------*/

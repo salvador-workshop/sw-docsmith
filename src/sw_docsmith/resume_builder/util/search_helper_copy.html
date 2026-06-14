@@ -1,0 +1,35 @@
+<script>
+    const getSelector = (keyStr) => {
+        return `#${keyStr} + pre code`
+    }
+
+    const copyIt = async (keyStr, p2, p3, p4) => {
+        console.log(keyStr)
+        
+        // find the element we will select
+        const selector = getSelector(keyStr)
+        console.log(selector)
+
+        const preCodeElement = document.querySelector(selector)
+        const copyText = preCodeElement.innerHTML
+        console.log(preCodeElement)
+        console.log(copyText)
+
+        const currentButton = this.event.target
+        const buttonElements = document.querySelectorAll('.btn-copy')
+        buttonElements.forEach(btnElement => {
+            btnElement.textContent = 'Copy text';
+            btnElement.style.backgroundColor = ''
+        })
+
+        try {
+            await navigator.clipboard.writeText(copyText);
+            console.log('Content copied to clipboard');
+
+            currentButton.textContent = 'Copied!';
+            currentButton.style.backgroundColor = '#77A265';
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+</script>

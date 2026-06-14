@@ -48,6 +48,8 @@ def build_search_helper_html(build_opts):
     write_opts = [
         "--embed-resources",
         "--standalone",
+        "--include-in-header",
+        "src/sw_docsmith/resume_builder/util/search_helper_copy.html",
         "--css",
         "src/sw_docsmith/resume_builder/util/search_helper_style.css",
         "--css",

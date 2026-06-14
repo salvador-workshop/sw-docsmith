@@ -1,6 +1,65 @@
 from .utils import format_phone_num, format_date, sort_exp
 
 
+def build_resume_exp_txt(res_exp):
+    print(res_exp)
+    out_text = ""
+    exp_type = res_exp["exp_type"]
+
+    if exp_type == "work":
+        out_text += f"{res_exp["exp_role"]} — {res_exp["org_name"]}\n\n"
+
+        start_date_str = format_date(res_exp["start_date"])
+        end_date_str = (
+            "Present" if not res_exp["end_date"] else format_date(res_exp["end_date"])
+        )
+        out_text += f"{start_date_str} — {end_date_str}  \n"
+        out_text += f"{res_exp["org_location"]}  \n"
+        out_text += f"Core technologies — {', '.join(res_exp["skills"])}\n\n"
+        for highlight in res_exp["highlights"]:
+            out_text += f"- {highlight}\n"
+        out_text += "\n"
+    elif exp_type == "education":
+        out_text += f"{res_exp["education_cred"]} — {res_exp["org_name"]}\n\n"
+        start_date_str = format_date(res_exp["start_date"])
+        end_date_str = (
+            "Present" if not res_exp["end_date"] else format_date(res_exp["end_date"])
+        )
+        out_text += f"{start_date_str} — {end_date_str}  \n"
+        out_text += f"{res_exp["org_location"]}  \n"
+        out_text += f"Core skills — {', '.join(res_exp["skills"])}\n\n"
+        for highlight in res_exp["highlights"]:
+            out_text += f"- {highlight}\n"
+        out_text += "\n"
+    elif exp_type == "project":
+        out_text += f"{res_exp["project_name"]} — {res_exp["org_name"]}\n\n"
+        start_date_str = format_date(res_exp["start_date"])
+        end_date_str = (
+            "Present" if not res_exp["end_date"] else format_date(res_exp["end_date"])
+        )
+        out_text += f"{start_date_str} — {end_date_str}  \n"
+        out_text += f"{res_exp["org_location"]}  \n"
+        out_text += f"Core skills — {', '.join(res_exp["skills"])}\n\n"
+        for highlight in res_exp["highlights"]:
+            out_text += f"- {highlight}\n"
+        out_text += "\n"
+    else:
+        # volunteering
+        out_text += f"{res_exp["exp_role"]} — {res_exp["org_name"]}\n\n"
+        start_date_str = format_date(res_exp["start_date"])
+        end_date_str = (
+            "Present" if not res_exp["end_date"] else format_date(res_exp["end_date"])
+        )
+        out_text += f"{start_date_str} — {end_date_str}  \n"
+        out_text += f"{res_exp["org_location"]}  \n"
+        out_text += f"Core skills — {', '.join(res_exp["skills"])}\n\n"
+        for highlight in res_exp["highlights"]:
+            out_text += f"- {highlight}\n"
+        out_text += "\n"
+
+    return out_text
+
+
 def build_resume_full_txt(resume_info, build_opts):
     out_file_full_txt = open("output/resume/resume-full.txt", "w", encoding="utf-8")
 
