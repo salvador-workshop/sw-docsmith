@@ -3,14 +3,31 @@
         return `#${keyStr} + pre code`
     }
 
-    const copyIt = (keyStr) => {
+    const copyIt = async (keyStr, p2, p3, p4) => {
         console.log(keyStr)
         
         // find the element we will select
         const selector = getSelector(keyStr)
         console.log(selector)
 
-        let preCodeElement = document.querySelector(selector)
-        console.log(preCodeElement.innerHTML)
+        const preCodeElement = document.querySelector(selector)
+        const copyText = preCodeElement.innerHTML
+        console.log(preCodeElement)
+        console.log(copyText)
+
+        const currentButton = this.event.target
+        const buttonElements = document.querySelectorAll('.btn-copy')
+        buttonElements.forEach(btnElement => {
+            btnElement.textContent = 'Copy text';
+        })
+
+        try {
+            await navigator.clipboard.writeText(copyText);
+            console.log('Content copied to clipboard');
+
+            currentButton.textContent = 'Copied!';
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
     }
 </script>

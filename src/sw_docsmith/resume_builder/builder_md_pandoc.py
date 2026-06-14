@@ -320,7 +320,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for contact_details in contact_data:
         out_file_full_md.write(f"### {contact_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{contact_details['id']}')\" id='{contact_details['id']}' data-entry-id={contact_details['id']}>Copy text</button>"
+            f"<button onClick=\"copyIt('{contact_details['id']}')\" class='btn-copy' id='{contact_details['id']}' data-entry-id={contact_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{contact_details['value']}\n```\n")
@@ -329,7 +329,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for resume_details in resume_data:
         out_file_full_md.write(f"### {resume_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{resume_details['id']}')\" id='{resume_details['id']}' data-entry-id={resume_details['id']}>Copy text</button>"
+            f"<button onClick=\"copyIt('{resume_details['id']}')\" class='btn-copy' id='{resume_details['id']}' data-entry-id={resume_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{resume_details['value']}\n```\n")
@@ -338,7 +338,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for cover_details in cover_data:
         out_file_full_md.write(f"### {cover_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{cover_details['id']}')\" id='{cover_details['id']}' data-entry-id={cover_details['id']}>Copy text</button>"
+            f"<button onClick=\"copyIt('{cover_details['id']}')\" class='btn-copy' id='{cover_details['id']}' data-entry-id={cover_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{cover_details['value']}\n```\n")
