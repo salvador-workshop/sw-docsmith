@@ -265,7 +265,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
                     if resume_ctg == "skills_qualifications":
                         resume_exp_entry = resume_exp_data
                         new_resume_data = {
-                            "id": f"resume.{resume_ctg}.{idx + 1}",
+                            "id": f"resume-{resume_ctg}-{idx + 1}",
                             "value": resume_exp_entry,
                         }
                         print(new_resume_data)
@@ -273,14 +273,14 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
                     else:
                         resume_exp_entry = build_resume_exp_txt(resume_exp_data)
                         new_resume_data = {
-                            "id": f"resume.{resume_ctg}.{idx + 1}",
+                            "id": f"resume-{resume_ctg}-{idx + 1}",
                             "value": resume_exp_entry,
                         }
                         print(new_resume_data)
                         resume_data.append(new_resume_data)
             else:
                 new_resume_data = {
-                    "id": f"resume.{resume_ctg}",
+                    "id": f"resume-{resume_ctg}",
                     "value": resume_val,
                 }
                 print(new_resume_data)
@@ -293,14 +293,14 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
         if isinstance(cover_val, list):
             for idx, cover_detail_data in enumerate(cover_val):
                 new_cover_data = {
-                    "id": f"cover.{cover_ctg}.{idx + 1}",
+                    "id": f"cover-{cover_ctg}-{idx + 1}",
                     "value": cover_detail_data,
                 }
                 print(new_cover_data)
                 cover_data.append(new_cover_data)
         else:
             new_cover_data = {
-                "id": f"cover.{cover_ctg}",
+                "id": f"cover-{cover_ctg}",
                 "value": cover_val,
             }
             print(new_cover_data)
@@ -320,7 +320,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for contact_details in contact_data:
         out_file_full_md.write(f"### {contact_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{contact_details['id']}')\">Copy text</button>"
+            f"<button onClick=\"copyIt('{contact_details['id']}')\" id='{contact_details['id']}' data-entry-id={contact_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{contact_details['value']}\n```\n")
@@ -329,7 +329,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for resume_details in resume_data:
         out_file_full_md.write(f"### {resume_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{resume_details['id']}')\">Copy text</button>"
+            f"<button onClick=\"copyIt('{resume_details['id']}')\" id='{resume_details['id']}' data-entry-id={resume_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{resume_details['value']}\n```\n")
@@ -338,7 +338,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for cover_details in cover_data:
         out_file_full_md.write(f"### {cover_details['id']} {{.data-heading}}\n")
         out_file_full_md.write(
-            f"<button onClick=\"copyIt('{cover_details['id']}')\">Copy text</button>"
+            f"<button onClick=\"copyIt('{cover_details['id']}')\" id='{cover_details['id']}' data-entry-id={cover_details['id']}>Copy text</button>"
         )
         out_file_full_md.write(f"\n")
         out_file_full_md.write(f"```\n{cover_details['value']}\n```\n")

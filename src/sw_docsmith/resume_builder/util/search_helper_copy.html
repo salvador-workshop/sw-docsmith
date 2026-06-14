@@ -1,12 +1,16 @@
 <script>
+    const getSelector = (keyStr) => {
+        return `#${keyStr} + pre code`
+    }
+
     const copyIt = (keyStr) => {
         console.log(keyStr)
-
+        
         // find the element we will select
-        let copyInput = document.querySelector('#copy-input')
-        // select that input
-        copyInput.select()
-        // copy it!
-        document.execCommand("copy")
+        const selector = getSelector(keyStr)
+        console.log(selector)
+
+        let preCodeElement = document.querySelector(selector)
+        console.log(preCodeElement.innerHTML)
     }
 </script>
