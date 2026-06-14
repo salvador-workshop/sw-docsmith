@@ -256,12 +256,21 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     resume_data = []
     for resume_ctg in resume_info:
         print('resume_ctg')
-        new_resume_data = {
-            'id': f"resume.{resume_ctg}",
-            'value': resume_info[resume_ctg],
-        }
-        print(new_resume_data)
-        resume_data.append(new_resume_data)
+        resume_val = resume_info[resume_ctg]
+        if resume_ctg != 'contact_info':
+            if isinstance(resume_val, list):
+                for idx, resume_subctg_data in enumerate(resume_val):
+                    new_resume_data = {
+                        'id': f"resume.{resume_ctg}.{idx}",
+                        'value': resume_subctg_data,
+                    }
+            else:
+                new_resume_data = {
+                    'id': f"resume.{resume_ctg}",
+                    'value': resume_val,
+                }
+            print(new_resume_data)
+            resume_data.append(new_resume_data)
 
     cover_data = []
     for cover_ctg in cover_info:
