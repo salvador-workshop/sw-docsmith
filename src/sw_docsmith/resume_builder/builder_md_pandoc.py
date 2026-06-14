@@ -10,6 +10,8 @@ from .utils_md import (
     format_skill_qual_md,
 )
 
+from .builder_txt import build_resume_exp_txt
+
 
 def build_resume_full_md_pandoc(resume_info, build_opts):
     out_file_full_md = open(
@@ -245,65 +247,85 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
 
     contact_data = []
     for contact_ctg in contact_info:
-        print('contact_ctg')
+        print("contact_ctg")
         new_contact_data = {
-            'id': f"contact.{contact_ctg['type']}",
-            'value': contact_ctg['info'],
+            "id": f"contact.{contact_ctg['type']}",
+            "value": contact_ctg["info"],
         }
         print(new_contact_data)
         contact_data.append(new_contact_data)
 
     resume_data = []
     for resume_ctg in resume_info:
-        print('resume_ctg')
+        print("resume_ctg")
         resume_val = resume_info[resume_ctg]
-        if resume_ctg != 'contact_info':
+        if resume_ctg != "contact_info":
             if isinstance(resume_val, list):
-                for idx, resume_subctg_data in enumerate(resume_val):
-                    new_resume_data = {
-                        'id': f"resume.{resume_ctg}.{idx}",
-                        'value': resume_subctg_data,
-                    }
-                    print(new_resume_data)
-                    resume_data.append(new_resume_data)
+                for idx, resume_exp_data in enumerate(resume_val):
+                    if resume_ctg == "skills_qualifications":
+                        resume_exp_entry = resume_exp_data
+                        new_resume_data = {
+                            "id": f"resume.{resume_ctg}.{idx + 1}",
+                            "value": resume_exp_entry,
+                        }
+                        print(new_resume_data)
+                        resume_data.append(new_resume_data)
+                    else:
+                        resume_exp_entry = build_resume_exp_txt(resume_exp_data)
+                        new_resume_data = {
+                            "id": f"resume.{resume_ctg}.{idx + 1}",
+                            "value": resume_exp_entry,
+                        }
+                        print(new_resume_data)
+                        resume_data.append(new_resume_data)
             else:
                 new_resume_data = {
-                    'id': f"resume.{resume_ctg}",
-                    'value': resume_val,
+                    "id": f"resume.{resume_ctg}",
+                    "value": resume_val,
                 }
                 print(new_resume_data)
                 resume_data.append(new_resume_data)
 
     cover_data = []
     for cover_ctg in cover_info:
-        print('cover_ctg')
-        new_cover_data = {
-            'id': f"cover.{cover_ctg}",
-            'value': cover_info[cover_ctg],
-        }
-        print(new_cover_data)
-        cover_data.append(new_cover_data)
+        cover_val = cover_info[cover_ctg]
+        print("cover_ctg")
+        if isinstance(cover_val, list):
+            for idx, cover_detail_data in enumerate(cover_val):
+                new_cover_data = {
+                    "id": f"cover.{cover_ctg}.{idx + 1}",
+                    "value": cover_detail_data,
+                }
+                print(new_cover_data)
+                cover_data.append(new_cover_data)
+        else:
+            new_cover_data = {
+                "id": f"cover.{cover_ctg}",
+                "value": cover_val,
+            }
+            print(new_cover_data)
+            cover_data.append(new_cover_data)
 
     # -------
     # Data Writing
     # -------
 
     for contact_details in contact_data:
-        out_file_full_md.write(f"{contact_details['id']}\n")
+        out_file_full_md.write(f"### {contact_details['id']}\n")
         out_file_full_md.write(f"\n")
-        out_file_full_md.write(f"{contact_details['value']}\n")
+        out_file_full_md.write(f"```\n{contact_details['value']}\n```\n")
         out_file_full_md.write(f"\n")
-    
+
     for resume_details in resume_data:
-        out_file_full_md.write(f"{resume_details['id']}\n")
+        out_file_full_md.write(f"### {resume_details['id']}\n")
         out_file_full_md.write(f"\n")
-        out_file_full_md.write(f"{resume_details['value']}\n")
+        out_file_full_md.write(f"```\n{resume_details['value']}\n```\n")
         out_file_full_md.write(f"\n")
-    
+
     for cover_details in cover_data:
-        out_file_full_md.write(f"{cover_details['id']}\n")
+        out_file_full_md.write(f"### {cover_details['id']}\n")
         out_file_full_md.write(f"\n")
-        out_file_full_md.write(f"{cover_details['value']}\n")
+        out_file_full_md.write(f"```\n{cover_details['value']}\n```\n")
         out_file_full_md.write(f"\n")
 
     # -------
