@@ -311,11 +311,11 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     # -------
     out_file_full_md.write(f"\n")
 
-    out_file_full_md.write(f"---\n")
-    out_file_full_md.write(
-        f"header-includes: <script>const copyIt = (keyStr) => {{console.log(keyStr)}}</script>\n"
-    )
-    out_file_full_md.write(f"---\n")
+    # out_file_full_md.write(f"---\n")
+    # out_file_full_md.write(
+    #     f"header-includes: <script></script>\n"
+    # )
+    # out_file_full_md.write(f"---\n")
 
     for contact_details in contact_data:
         out_file_full_md.write(f"### {contact_details['id']} {{.data-heading}}\n")
