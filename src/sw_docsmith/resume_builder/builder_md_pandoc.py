@@ -249,7 +249,7 @@ def build_search_helper_md_pandoc(complete_resume_info, build_opts):
     for contact_ctg in contact_info:
         print("contact_ctg")
         new_contact_data = {
-            "id": f"contact.{contact_ctg['type']}",
+            "id": f"contact-{contact_ctg['type']}",
             "value": contact_ctg["info"],
         }
         print(new_contact_data)
