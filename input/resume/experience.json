@@ -123,25 +123,6 @@
                 "Partnered with a financial transaction processor working closely with the \"Big Five\" Canadian banks.",
                 "Upgraded cloud apps which leverage Azure Cognitive Services for anti-fraud verification."
             ]
-        },
-        {
-            "org_name": "Salvador Workshop",
-            "org_location": "Toronto, Canada",
-            "exp_type": "work",
-            "exp_role": "Founder, Lead Developer",
-            "start_date": "2025-01-15",
-            "end_date": null,
-            "skills": [
-                "2D/3D Modeling",
-                "Parametric Design",
-                "NPM Library Design",
-                "JavaScript",
-                "Open Source Dev't"
-            ],
-            "highlights": [
-                "Salvador Workshop (SW) is a tech-powered design studio, currently developing custom software tools for product design.",
-                "\"swcad-js\" is SW's open source CAD coding toolkit in JavaScript. This library extends JSCAD to facilitate 2D and 3D design."
-            ]
         }
     ],
     "education": [
@@ -199,6 +180,26 @@
         }
     ],
     "projects": [
+        {
+            "org_name": "Salvador Workshop",
+            "org_location": "Toronto, Canada",
+            "exp_type": "project",
+            "project_name": "swcad-js",
+            "exp_role": "Founder, Lead Developer",
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "skills": [
+                "2D/3D Modeling",
+                "Parametric Design",
+                "NPM Library Design",
+                "JavaScript",
+                "Open Source Dev't"
+            ],
+            "highlights": [
+                "Salvador Workshop (SW) is a tech-powered design studio, currently developing custom software tools for product design.",
+                "\"swcad-js\" is SW's open source CAD coding toolkit in JavaScript. This library extends JSCAD to facilitate 2D and 3D design."
+            ]
+        },
         {
             "org_name": "Guild of St. Isidore (TO)",
             "org_location": "Toronto, Canada",
